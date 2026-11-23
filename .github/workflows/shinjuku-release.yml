@@ -4,6 +4,8 @@ on:
     tags: ["v*"]
 jobs:
   release:
+    permissions:
+      contents: write
     uses: event-horizon-gg/shinjuku-catalog/.github/workflows/release.yml@main
     with:
       build-command: zsh ./build.sh
