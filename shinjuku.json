@@ -1,0 +1,8 @@
+{
+  "name": "Orbit",
+  "pitch": "A Pomodoro timer with living gradient themes.",
+  "description": "A native Pomodoro timer with Stellar, Synthwave and Cyberpunk gradient themes and a compact floating mode. No accounts, analytics or network access.",
+  "accentColor": "#C2459B",
+  "icon": "Assets/Orbit.png",
+  "screenshots": []
+}

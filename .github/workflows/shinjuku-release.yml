@@ -1,0 +1,13 @@
+name: Shinjuku release
+on:
+  push:
+    tags: ["v*"]
+jobs:
+  release:
+    uses: event-horizon-gg/shinjuku-catalog/.github/workflows/release.yml@main
+    with:
+      build-command: zsh ./build.sh
+      app-path: Orbit.app
+    secrets:
+      catalog-app-id: ${{ secrets.SHINJUKU_CATALOG_APP_ID }}
+      catalog-app-key: ${{ secrets.SHINJUKU_CATALOG_APP_KEY }}
