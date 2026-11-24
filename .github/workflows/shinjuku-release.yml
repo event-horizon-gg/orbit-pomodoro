@@ -13,3 +13,5 @@ jobs:
     secrets:
       catalog-app-id: ${{ secrets.SHINJUKU_CATALOG_APP_ID }}
       catalog-app-key: ${{ secrets.SHINJUKU_CATALOG_APP_KEY }}
+      signing-p12: ${{ secrets.SHINJUKU_SIGNING_P12 }}
+      signing-password: ${{ secrets.SHINJUKU_SIGNING_PASSWORD }}
