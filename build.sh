@@ -3,10 +3,11 @@ set -eu
 cd "$(dirname "$0")"
 mkdir -p "Orbit.app/Contents/MacOS" "Orbit.app/Contents/Resources" build
 for arch in arm64 x86_64; do
-    xcrun swiftc -O -target "$arch-apple-macosx14.0" -module-cache-path "${TMPDIR:-/tmp}/orbit-swift-cache" Sources/TimerEngine.swift Sources/Orbit.swift Sources/ThemeDials.swift Sources/LivingThemes.swift -o "build/Orbit-$arch"
+    xcrun swiftc -O -target "$arch-apple-macosx14.0" -module-cache-path "${TMPDIR:-/tmp}/orbit-swift-cache" Sources/TimerEngine.swift Sources/Orbit.swift Sources/ThemeDials.swift Sources/LivingThemes.swift Sources/EventHorizonMark.swift -o "build/Orbit-$arch"
 done
 lipo -create build/Orbit-arm64 build/Orbit-x86_64 -output Orbit.app/Contents/MacOS/Orbit
 cp Assets/Orbit.icns Orbit.app/Contents/Resources/Orbit.icns
+cp Assets/Brand/event-horizon-watermark.png Orbit.app/Contents/Resources/
 cp LICENSE Orbit.app/Contents/Resources/LICENSE.txt
 cp INSTALL.txt Orbit.app/Contents/Resources/INSTALL.txt
 cat > Orbit.app/Contents/Info.plist <<PLIST

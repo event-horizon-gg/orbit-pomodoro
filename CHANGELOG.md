@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.4
+
+- The Settings sheet now ends with a faint Event Horizon mark in its bottom-right corner, partly off the edge. It takes the current theme's accent (mint for Stellar, pink for Synthwave, lime for Cyberpunk) and has its own space below the last row, so it sits behind no text.
+
 ## 1.2.1
 
 - Branded drag-to-install DMG with a mint gradient, Retina artwork, large icon targets, and an Applications shortcut.

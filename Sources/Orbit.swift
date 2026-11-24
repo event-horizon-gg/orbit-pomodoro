@@ -270,7 +270,11 @@ struct SettingsView: View {
             Toggle("Completion sound", isOn: $model.sound).tint(model.palette.accent)
             Toggle("Keep window on top", isOn: $model.alwaysOnTop).tint(model.palette.accent)
             HStack { Button("Try a 10-second demo") { model.demo() }; Spacer(); Text("SPACE  start / pause").font(.system(size: 9, design: .monospaced)).foregroundStyle(.secondary) }
-        }.padding(28).frame(width: 450).background(LinearGradient(colors: model.palette.background, startPoint: .topLeading, endPoint: .bottomTrailing)).preferredColorScheme(.dark)
+            Color.clear.frame(height: 52) // Room for the Event Horizon mark, clear of every label.
+        }.padding(28).frame(width: 450)
+            .background(alignment: .bottomTrailing) { EventHorizonMark(tint: model.palette.accent).frame(width: 170, height: 170).offset(x: 42, y: 78) }
+            .clipped()
+            .background(LinearGradient(colors: model.palette.background, startPoint: .topLeading, endPoint: .bottomTrailing)).preferredColorScheme(.dark)
     }
 }
 
